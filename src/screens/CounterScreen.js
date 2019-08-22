@@ -12,14 +12,21 @@ const CounterScreen = () => {
     //from useState should be stored in a "counter" variable
     //and the second element returned from useState should
     //be stored in a "setCounter" variable
+    
+    //never modify counter directly
+    //use the second item in the destructure
     const [counter, setCounter] = useState(0);
     
     return <View>
         <Button title="Increase" onPress={() =>{
-            counter++;
+            //don't do this
+            //counter++;
+            setCounter(counter + 1);
+
         }} />
         <Button title="Decrease" onPress={() =>{
-            counter--;
+            setCounter(counter - 1);
+
         }} />
         <Text>Current count: {counter}</Text>
     </View>
