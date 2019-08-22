@@ -1,11 +1,16 @@
 //import all needs
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 //actual component
-const ImageDetail = () => {
-    return <Text>Show image of forest</Text>
-}
+//NOTE THE DESTRUCTURING
+const ImageDetail = ({imageSource, title, score}) => {
+    return <View>
+        <Image source= {imageSource} />
+        <Text>{title}</Text>
+        <Text>Score is {score}</Text>
+    </View>
+};
 
 
 //Styles!
