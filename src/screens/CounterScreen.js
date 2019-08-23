@@ -16,6 +16,7 @@ const CounterScreen = () => {
     //never modify counter directly
     //use the second item in the destructure
     const [counter, setCounter] = useState(0);
+    const [message, setMessage] = useState("the");
     
     return <View>
         <Button title="Increase" onPress={() =>{

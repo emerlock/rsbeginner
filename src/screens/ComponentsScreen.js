@@ -26,11 +26,11 @@ const ComponentsScreen = () => {
 //create a stylesheet to style component
 const styles = StyleSheet.create({
   textStyle: {
-    fontSize: 45
+    fontSize: 45,
   },
   nameStyle: {
-    fontSize: 20
-  }
+    fontSize: 20,
+  },
 });
 
 //export the component so we can use it elsewhere

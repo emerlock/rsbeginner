@@ -1,9 +1,9 @@
-import React from 'react';
-import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
+import React from "react";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 
 //since the stack navigator is calling the home screen
 //it also sends properties (props) we can use
-//we need to accept the argument it sends 
+//we need to accept the argument it sends
 //so we have the arg "props" so we can utilize the stack nav props
 
 //additionally, we can DESTRUCTURE props to only show the navigation object
@@ -11,41 +11,47 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 
 //instead of HomeScreen = (props) =>{
 //do what is seen below
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   return (
   <View>
-      <Text style={styles.text}>hi there!</Text>
+      <Text style={(styles.text, gStyles.text)}>hi there!</Text>
       <Button
         title="Go to Components Demo"
-        onPress={() => navigation.navigate('Components')} 
+        onPress={() => navigation.navigate("Components")}
       />
       <Button
         title="Go to List Demo"
-        onPress={() => navigation.navigate('List')}
+        onPress={() => navigation.navigate("List")}
       />
-      <Button 
+      <Button
         title="Go to Image Demo"
-        onPress={() => navigation.navigate('Image')}
+        onPress={() => navigation.navigate("Image")}
       />
-      <Button 
+      <Button
         title="Go to Counter Demo"
-        onPress={() => navigation.navigate('Counter')}
+        onPress={() => navigation.navigate("Counter")}
       />
-      <Button 
+      <Button
         title="Go to Color Demo"
-        onPress={() => navigation.navigate('Color')}
+        onPress={() => navigation.navigate("Color")}
       />
-      <Button 
+      <Button
         title="Go to Square Demo"
-        onPress={() => navigation.navigate('Square')}
+        onPress={() => navigation.navigate("Square")}
       />
     </View>
   );
 };
- 
+
 const styles = StyleSheet.create({
   text: {
     fontSize: 30
+  }
+});
+
+const gStyles = StyleSheet.create({
+  text: {
+    color: "red"
   }
 });
 
