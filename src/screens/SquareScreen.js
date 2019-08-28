@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 import ColorCounter from "../Components/ColorCounter";
+import { State } from "react-native-gesture-handler";
 
 //state gets created in the most parent component
 //even though the state will be used in colorcounter and squarescreen
@@ -22,11 +23,21 @@ const reducer = (state, action) => {
       //copies the state into this object
       //overwrite red with new value
       //return it
-      return { ...state, red: state.red + action.amount };
+      //if the amount is not within constraints
+      //return just the state object
+      //some sort of state needs to return at all times in reducers
+      return state.red + action.amount > 255 || state.red + action.amount < 0
+        ? state
+        : { ...state, red: state.red + action.amount };
     case "green":
-      return { ...state, green: state.green + action.amount };
+      return state.green + action.amount > 255 ||
+        state.green + action.amount < 0
+        ? state
+        : { ...state, green: state.green + action.amount };
     case "blue":
-      return { ...state, blue: state.blue + action.amount };
+      return state.blue + action.amount > 255 || state.blue + action.amount < 0
+        ? state
+        : { ...state, blue: state.blue + action.amount };
     default:
       return state;
   }
