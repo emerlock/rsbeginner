@@ -13,12 +13,13 @@ import { State } from "react-native-gesture-handler";
 
 const COLOR_INCREMENT = 15;
 
+//using keywords "type" and "payload" are an industry standard***
 const reducer = (state, action) => {
   //state === {red: number, green: number, blue: number}
   //action === {colorToChange: 'red' || 'green' || 'blue, amount: 15 || -15}
 
-  switch (action.colorToChange) {
-    case "red":
+  switch (action.type) {
+    case "change_red":
       //create new object
       //copies the state into this object
       //overwrite red with new value
@@ -26,18 +27,19 @@ const reducer = (state, action) => {
       //if the amount is not within constraints
       //return just the state object
       //some sort of state needs to return at all times in reducers
-      return state.red + action.amount > 255 || state.red + action.amount < 0
+      return state.red + action.payload > 255 || state.red + action.payload < 0
         ? state
-        : { ...state, red: state.red + action.amount };
-    case "green":
-      return state.green + action.amount > 255 ||
-        state.green + action.amount < 0
+        : { ...state, red: state.red + action.payload };
+    case "change_green":
+      return state.green + action.payload > 255 ||
+        state.green + action.payload < 0
         ? state
-        : { ...state, green: state.green + action.amount };
-    case "blue":
-      return state.blue + action.amount > 255 || state.blue + action.amount < 0
+        : { ...state, green: state.green + action.payload };
+    case "change_blue":
+      return state.blue + action.payload > 255 ||
+        state.blue + action.payload < 0
         ? state
-        : { ...state, blue: state.blue + action.amount };
+        : { ...state, blue: state.blue + action.payload };
     default:
       return state;
   }
@@ -50,28 +52,28 @@ const SquareScreen = () => {
     <View>
       <ColorCounter
         onIncrease={() =>
-          dispatch({ colorToChange: "red", amount: COLOR_INCREMENT })
+          dispatch({ type: "change_red", payload: COLOR_INCREMENT })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "red", amount: -1 * COLOR_INCREMENT })
+          dispatch({ type: "change_red", payload: -1 * COLOR_INCREMENT })
         }
         color="Red"
       />
       <ColorCounter
         onIncrease={() =>
-          dispatch({ colorToChange: "green", amount: COLOR_INCREMENT })
+          dispatch({ type: "change_green", payload: COLOR_INCREMENT })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "green", amount: -1 * COLOR_INCREMENT })
+          dispatch({ type: "change_green", payload: -1 * COLOR_INCREMENT })
         }
         color="Green"
       />
       <ColorCounter
         onIncrease={() =>
-          dispatch({ colorToChange: "blue", amount: COLOR_INCREMENT })
+          dispatch({ type: "change_blue", payload: COLOR_INCREMENT })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "blue", amount: -1 * COLOR_INCREMENT })
+          dispatch({ type: "change_blue", payload: -1 * COLOR_INCREMENT })
         }
         color="Blue"
       />

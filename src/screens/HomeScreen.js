@@ -13,7 +13,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 //do what is seen below
 const HomeScreen = ({ navigation }) => {
   return (
-  <View>
+    <View>
       <Text style={(styles.text, gStyles.text)}>hi there!</Text>
       <Button
         title="Go to Components Demo"
@@ -39,20 +39,24 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Square Demo"
         onPress={() => navigation.navigate("Square")}
       />
+      <Button
+        title="Go to Text Demo"
+        onPress={() => navigation.navigate("Text")}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30
-  }
+    fontSize: 30,
+  },
 });
 
 const gStyles = StyleSheet.create({
   text: {
-    color: "red"
-  }
+    color: "red",
+  },
 });
 
 export default HomeScreen;
