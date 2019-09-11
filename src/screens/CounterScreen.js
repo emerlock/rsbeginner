@@ -12,22 +12,22 @@ const reducer = (state, action) => {
 };
 
 const CounterScreen = () => {
-  //using useState to intialize a new piece of state
-  //you pass in the starting, or default value of the data
-  //using square brackets to do array destructuring
-  //so basically with the destructuring
-  //useState returns an array that you can destructure
-  //what we are doing is saying the first element returned
-  //from useState should be stored in a "counter" variable
-  //and the second element returned from useState should
-  //be stored in a "setCounter" variable
+  // using useState to intialize a new piece of state
+  // you pass in the starting, or default value of the data
+  // using square brackets to do array destructuring
+  // so basically with the destructuring
+  // useState returns an array that you can destructure
+  // what we are doing is saying the first element returned
+  // from useState should be stored in a "counter" variable
+  // and the second element returned from useState should
+  // be stored in a "setCounter" variable
 
-  //never modify counter directly
-  //use the second item in the destructure
+  // never modify counter directly
+  // use the second item in the destructure
 
-  //edit: using reducer instead of useState for reducer exercise
-  //const [counter, setCounter] = useState(0);
-  //const [message, setMessage] = useState("the");
+  // edit: using reducer instead of useState for reducer exercise
+  // const [counter, setCounter] = useState(0);
+  // const [message, setMessage] = useState("the");
 
   const [state, dispatch] = useReducer(reducer, { counter: 0 });
   const { counter } = state;
@@ -36,18 +36,18 @@ const CounterScreen = () => {
       <Button
         title="Increase"
         onPress={() => {
-          //don't do this
-          //counter++;
-          //edit: using dispatch instead of setCounter for reducer exercise
-          //setCounter(counter + 1);
+          // don't do this
+          // counter++;
+          // edit: using dispatch instead of setCounter for reducer exercise
+          // setCounter(counter + 1);
           dispatch({ type: "change_counter", payload: 1 });
         }}
       />
       <Button
         title="Decrease"
         onPress={() => {
-          //edit: using dispatch instead of setCounter for reducer exercise
-          //setCounter(counter - 1);
+          // edit: using dispatch instead of setCounter for reducer exercise
+          // setCounter(counter - 1);
           dispatch({ type: "change_counter", payload: -1 });
         }}
       />

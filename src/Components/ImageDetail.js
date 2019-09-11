@@ -1,9 +1,9 @@
-//import all needs
+// import all needs
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-//actual component
-//NOTE THE DESTRUCTURING
+// actual component
+// NOTE THE DESTRUCTURING
 const ImageDetail = ({ imageSource, title, score }) => {
   return (
     <View>
@@ -14,8 +14,8 @@ const ImageDetail = ({ imageSource, title, score }) => {
   );
 };
 
-//Styles!
+// Styles!
 const styles = StyleSheet.create({});
 
-//export to make it public
+// export to make it public
 export default ImageDetail;

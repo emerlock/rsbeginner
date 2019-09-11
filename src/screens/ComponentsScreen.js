@@ -1,19 +1,19 @@
-//import libraries
+// import libraries
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 
-//create component - a function that returns "jsx"
+// create component - a function that returns "jsx"
 
-/// () => and function() are the same
+// / () => and function() are the same
 const ComponentsScreen = () => {
-  //cannot be a javascript object
-  //can be strings, numbers, arrays
-  //can also be jsx
+  // cannot be a javascript object
+  // can be strings, numbers, arrays
+  // can also be jsx
   const greeting = <Text>Hello to you!</Text>;
   const nameString = "Eric";
 
-  //<View> can be either on the same line as return, or in parentheses
-  //cannot be under return if not in parentheses
+  // <View> can be either on the same line as return, or in parentheses
+  // cannot be under return if not in parentheses
   return (
     <View>
       <Text style={styles.textStyle}>Getting started with react native!</Text>
@@ -23,7 +23,7 @@ const ComponentsScreen = () => {
   );
 };
 
-//create a stylesheet to style component
+// create a stylesheet to style component
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 45,
@@ -33,5 +33,5 @@ const styles = StyleSheet.create({
   },
 });
 
-//export the component so we can use it elsewhere
+// export the component so we can use it elsewhere
 export default ComponentsScreen;

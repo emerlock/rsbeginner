@@ -1,8 +1,8 @@
 import React from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 
-//pass reference of the function that is manipulating the scope objects
-//so we can do what we want in squarescreen
+// pass reference of the function that is manipulating the scope objects
+// so we can do what we want in squarescreen
 const ColorCounter = ({ color, onIncrease, onDecrease }) => {
   return (
     <View>

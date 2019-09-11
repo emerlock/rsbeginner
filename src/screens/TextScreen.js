@@ -22,7 +22,7 @@ const TextScreen = () => {
 
       <Text>Enter Password</Text>
       <TextInput
-        secureTextEntry={true}
+        secureTextEntry
         autoCapitalize="none"
         autoCorrect={false}
         style={styles.textInput}

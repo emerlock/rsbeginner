@@ -1,16 +1,16 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
 
-//since the stack navigator is calling the home screen
-//it also sends properties (props) we can use
-//we need to accept the argument it sends
-//so we have the arg "props" so we can utilize the stack nav props
+// since the stack navigator is calling the home screen
+// it also sends properties (props) we can use
+// we need to accept the argument it sends
+// so we have the arg "props" so we can utilize the stack nav props
 
-//additionally, we can DESTRUCTURE props to only show the navigation object
-//as before, use curly braces and just call that navigation object
+// additionally, we can DESTRUCTURE props to only show the navigation object
+// as before, use curly braces and just call that navigation object
 
-//instead of HomeScreen = (props) =>{
-//do what is seen below
+// instead of HomeScreen = (props) =>{
+// do what is seen below
 const HomeScreen = ({ navigation }) => {
   return (
     <View>
@@ -61,12 +61,12 @@ const gStyles = StyleSheet.create({
 
 export default HomeScreen;
 
-//two ways to do buttons
-//button primitive gives you a button, but cannot be styled
-//touchable opacity primitive wraps a selection of items that you want to
-//be a "button", or touchable
-//can actually style this or do anything with
-//touchable opacity is used more often
+// two ways to do buttons
+// button primitive gives you a button, but cannot be styled
+// touchable opacity primitive wraps a selection of items that you want to
+// be a "button", or touchable
+// can actually style this or do anything with
+// touchable opacity is used more often
 
 /*
 
